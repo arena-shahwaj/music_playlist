@@ -70,7 +70,7 @@ body {
 
 .app-header h1 {
   font-size: 4rem;
-  margin-left: -130px;
+  margin-left: -100px;
   color: #000;
   margin-bottom: 70px;
 }
@@ -110,7 +110,7 @@ body {
 
 #progress {
   width: 100%;
-
+  -webkit-appearance: none;
   height: 8px;
   background: #fff;
   border-radius: 5px;
