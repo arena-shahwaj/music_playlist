@@ -100,7 +100,8 @@ body {
   transition: background 0.3s ease;
 }
 #track-title{
-margin: 10px;
+margin-top: 20px ;
+
 }
 .player-controls button:hover {
   background: #070503;
