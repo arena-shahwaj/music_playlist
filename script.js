@@ -25,16 +25,21 @@ function loadTrack(index) {
   const track = playlistItems[index].getAttribute('data-track');
   trackTitle.textContent = playlistItems[index].textContent;
   audio.src = track;
+  audio.load(); // Ensure the audio is loaded before playing
+  progress.value = 0; // Reset progress bar when a new track is loaded
+  playPauseBtn.innerHTML = '<i class="fas fa-play"></i>'; // Set to play icon on track load
 }
 
 // Play/Pause Toggle
 playPauseBtn.addEventListener('click', () => {
-  if (audio.paused) {
-    audio.play();
-    playPauseBtn.textContent = '⏸️';
-  } else {
-    audio.pause();
-    playPauseBtn.textContent = '▶️';
+  if (audio.src) { // Check if a track is loaded
+    if (audio.paused) {
+      audio.play();
+      playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>'; // Pause icon
+    } else {
+      audio.pause();
+      playPauseBtn.innerHTML = '<i class="fas fa-play"></i>'; // Play icon
+    }
   }
 });
 
@@ -59,4 +64,23 @@ playlistItems.forEach((item, index) => {
     loadTrack(currentTrackIndex);
     audio.play();
   });
+});
+
+// Update Progress Bar as the Track Plays
+audio.addEventListener('timeupdate', () => {
+  if (!isNaN(audio.duration)) {
+    const progressPercent = (audio.currentTime / audio.duration) * 100;
+    progress.value = progressPercent;
+  }
+});
+
+// Update Audio Time when Progress Bar is clicked
+progress.addEventListener('input', () => {
+  const progressTime = (progress.value / 100) * audio.duration;
+  audio.currentTime = progressTime;
+});
+
+// Reset Play/Pause Button when Audio Ends
+audio.addEventListener('ended', () => {
+  playPauseBtn.innerHTML = '<i class="fas fa-play"></i>'; // Play icon when the song ends
 });
