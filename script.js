@@ -5,7 +5,7 @@ const playPauseBtn = document.getElementById('play-pause');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 const progress = document.getElementById('progress');
-const trackTitle = document.getElementById('track-title');
+const trackTitle = document.getElementById('track-title'); // Now trackTitle is correctly defined
 const playlistItems = document.querySelectorAll('.playlist li');
 
 // Audio Player
