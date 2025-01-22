@@ -110,7 +110,7 @@ body {
 
 #progress {
   width: 100%;
-  -webkit-appearance: none;
+
   height: 8px;
   background: #fff;
   border-radius: 5px;
