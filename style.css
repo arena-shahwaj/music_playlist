@@ -34,7 +34,7 @@ body {
 .letter {
   opacity: 0;
   letter-spacing: 2px;
-  animation: letterFadeIn 0.5s ease-in-out forwards;
+  animation: letterFadeIn 0.9s ease-in-out forwards;
 }
 
 .letter:nth-child(1) { animation-delay: 0.5s; }
@@ -78,7 +78,7 @@ body {
 .melody-text {
   font-size: 4rem;
   color: #000;
-  margin-left: -40px;
+  margin-left: -42px;
   margin-top: 20px;
 }
 
