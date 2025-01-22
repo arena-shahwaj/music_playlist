@@ -89,12 +89,12 @@ body {
 
 .player-controls button {
   width: 60px;
-  background: #000;
+  background: #1f1e1e;
   border: none;
   color: #fff;
   padding: 10px 20px;
   margin: 0 5px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   cursor: pointer;
   border-radius: 5px;
   transition: background 0.3s ease;
